@@ -55,22 +55,25 @@ extern uint32_t latency[3];
 extern xQueueHandle q;
 extern xQueueHandle xQueueCommand;
 
+
+//считаем номера пакетов и добавляем их в заголовок, необходимо для корректной работы предсказания будующего положения.
 uint16_t index_rttrpm_packet = 0;
 int count = 0;
 
 #define SIZE_NAME 15
 
+//Структура заголовка пакета RTTRPM
 struct rttrpm
 {
 	//Заголовок rttrp пакета
-	uint16_t	sigInt;		//Устанавливает порядок бит для типа int 
-	uint16_t	sigFloat; //Устанавливает порядок бит для типа float
-	uint16_t	version;
-	uint32_t	id;
-	uint8_t		format;
-	uint16_t	size_rttrpm_packet;
-	uint32_t	context;
-	uint8_t		numOfTrackableModules;
+	uint16_t	sigInt;									//Устанавливает порядок бит для типа int 
+	uint16_t	sigFloat; 							//Устанавливает порядок бит для типа float
+	uint16_t	version;								//Устанавливает версию RTTRPM
+	uint32_t	id;											//Устанавливает номер пакета
+	uint8_t		format;									//Формат пакета
+	uint16_t	size_rttrpm_packet;			//Размер RTTRPM пакета заголовок+все включенные модули
+	uint32_t	context;								//Контекст для передачи лубой пользовательской информации
+	uint8_t		numOfTrackableModules;  //Количество вложенных в RTTRPM пакет модулей
 	
 	//TrackableWithoutTimestamp
 	uint8_t type;
@@ -108,6 +111,8 @@ struct centroidPosition
 	double y;
 	double z;
 }__attribute__((packed)) 
+
+
 
 position_modul = 
 
@@ -501,6 +506,7 @@ dhcpc_appcall(void)
 	if(uip_udp_conn->rport == HTONS(24002))
 	{
 		//if(count == 500)LD_TG;
+		//Если в очереди появилось сообщение о новой позиции, отправляем 
 		if(uxQueueMessagesWaiting(q) > 0)
 		{
 			
@@ -513,6 +519,8 @@ dhcpc_appcall(void)
 			position_modul.x = xQmotorPosition[2];
 			position_modul.y = xQmotorPosition[0];
 			position_modul.z = xQmotorPosition[1];
+			
+			//Добавляем задержку между измерениями, она расчитывается в main.c
 			position_modul.latency = __REV16(latency[2]);
 //			
 //			orientation_modul.w = cos(	(((xQmotorPosition)*3.14)/180)	/2.0		);
@@ -520,7 +528,9 @@ dhcpc_appcall(void)
 //			orientation_modul.y = sin(	(((xQmotorPosition)*3.14)/180)	/2.0	);
 //			orientation_modul.z = 0;
 			
+			//Добавляем в заголовок номер пакета. __REV16 - меняет порядок бит на обратный
 			rttrpm_header.id = __REV16(index_rttrpm_packet);
+			//Добавляем в заголовок размер RTTRPM-пакета, 
 			rttrpm_header.size_rttrpm_packet 		= __REV16(33 + sizeof(position_modul));
 			rttrpm_header.size_trackable_modul 	= __REV16(15 + sizeof(position_modul));
 			
@@ -534,17 +544,22 @@ dhcpc_appcall(void)
 //			orientation_modul_euler.y = ((xQmotorPosition)*3.14)/180;
 //			orientation_modul_euler.z = 0;
 
+			//Объевляем массив msg в который засунем RTTRPM пакет для отправки
 			uint8_t msg[sizeof(rttrpm_header) + sizeof(position_modul)];
 			
+			//Копируем в msg заголовок, начиная с 0-го элемента
 			memcpy(&msg, &rttrpm_header, sizeof(rttrpm_header));
+			//Копируеи в msg сразу после заголовка, модуль позиционирования (position_modul)
 			memcpy(&msg[sizeof(rttrpm_header)], &position_modul, sizeof(position_modul));
 			
 			uint16_t	stat_link = enc28j60PhyReadScan()&0x04;
 			if(stat_link != 0) LD_RED_OFF;
 			else LD_RED_ON;
 			
+			//Отправляем пакет
 			uip_send(msg, sizeof(msg));
 			
+			//Вычисляем номер пакета, если выходим за границы int16, обнуляем значение
 			if(index_rttrpm_packet == 65535) index_rttrpm_packet = 0;
 			else index_rttrpm_packet++;
 
