@@ -67,6 +67,10 @@ osThreadId myTask04Handle;
 
 #define DELAY_READ_ENCODER 8
 
+//Множитель
+double multiplier = 1.0;
+//Смещение
+double offset = 0.0;
 
 uint16_t stat_link;
 uint8_t lstat = 0;
@@ -244,7 +248,7 @@ int main(void)
 	
 	HAL_Delay(100);
 	
-	//hello_world_init();
+	hello_world_init();
 	
 	struct timer periodic_timer, arp_timer;
   LD_OFF;

@@ -55,6 +55,11 @@ extern uint32_t latency[3];
 extern xQueueHandle q;
 extern xQueueHandle xQueueCommand;
 
+//Множитель
+extern double multiplier;
+//Смещение
+extern double offset;
+
 
 //считаем номера пакетов и добавляем их в заголовок, необходимо для корректной работы предсказания будующего положения.
 uint16_t index_rttrpm_packet = 0;
@@ -516,7 +521,7 @@ dhcpc_appcall(void)
 			
 			xQueueReceive( q, &( xQmotorPosition ), portMAX_DELAY ); 
 			
-			position_modul.x = xQmotorPosition[2];
+			position_modul.x = xQmotorPosition[2]*multiplier + offset;
 			position_modul.y = xQmotorPosition[0];
 			position_modul.z = xQmotorPosition[1];
 			
