@@ -847,21 +847,21 @@ void StartTask03(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-//		if( uxQueueMessagesWaiting(xQueueCommand) > 0)
-//		{
-//			uint8_t commandName;
-//			xQueueReceive( xQueueCommand, &( commandName ), portMAX_DELAY ); 
-//			switch(commandName){
-//				case COMMAND_RESET_COUNTER:	
-//					motorPosition = 0;
-//					counter = 0;
-//					xQueueSend(q, ( void * ) &motorPosition, portMAX_DELAY  );
-//					break;
-//				case SEND_MOTOR_POSITION:
-//					if( isConnected == 1 ) xQueueSend(q, ( void * ) &motorPosition, portMAX_DELAY  );
-//					break;	
-//		}
-//		}
+		
+		//Если получили комманду по telnet
+		if( uxQueueMessagesWaiting(xQueueCommand) > 0)
+		{
+			uint8_t commandName;
+			xQueueReceive( xQueueCommand, &( commandName ), portMAX_DELAY ); 
+			switch(commandName){
+				case COMMAND_RESET_COUNTER:	
+					
+					break;
+				case SEND_MOTOR_POSITION:
+				//	if( isConnected == 1 ) xQueueSend(q, ( void * ) &motorPosition, portMAX_DELAY  );
+					break;	
+		}
+		}
 		
 		if((HAL_GetTick() - time) > 500) // интервал 1000мс = 1сек
 		{ 
