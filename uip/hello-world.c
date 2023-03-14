@@ -136,6 +136,28 @@ hello_world_appcall(void)
 static int
 handle_connection_command(struct hello_world_state *s)
 {
+	PSOCK_BEGIN(&s->p);
+
+  PSOCK_SEND_STR(&s->p, "Hello. What is your name?\n\r");
+  PSOCK_READTO(&s->p, '\n');
+	
+//	short a = -1;
+//	for(int i=0; i < sizeof(s->inputbuffer); i++)
+//	{
+//		if(s->inputbuffer[i] == '=')
+//		{
+//			a = i;
+//			break;
+//		}
+//	}
+	
+  strncpy(s->name, s->inputbuffer, sizeof(s->name));
+  PSOCK_SEND_STR(&s->p, "Hello ");
+  PSOCK_SEND_STR(&s->p, s->name);
+  PSOCK_CLOSE(&s->p);
+	PSOCK_END(&s->p);
+	
+	/*
   PSOCK_BEGIN(&s->p);
 	while(1)
 	{	
@@ -145,6 +167,7 @@ handle_connection_command(struct hello_world_state *s)
 	}
 	PSOCK_CLOSE(&s->p);
 	PSOCK_END(&s->p);
+	*/
 
 }
 

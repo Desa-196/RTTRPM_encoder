@@ -27,21 +27,18 @@ Project File Date:  03/13/2023
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'EncoderV2'
-compiling dhcpc.c...
-..\uip\dhcpc.c(59): error:  #260-D: explicit type is missing ("int" assumed)
-  extern multiplier;
-..\uip\dhcpc.c(61): error:  #260-D: explicit type is missing ("int" assumed)
-  extern devisor;
-..\uip\dhcpc.c(63): error:  #260-D: explicit type is missing ("int" assumed)
-  extern offset;
-..\uip\dhcpc.c(526): error:  #29: expected an expression
-  			position_modul.x = xQmotorPosition[2]/;
-..\uip\dhcpc.c(562): warning:  #223-D: function "enc28j60PhyReadScan" declared implicitly
-  			uint16_t	stat_link = enc28j60PhyReadScan()&0x04;
-..\uip\dhcpc.c(402): warning:  #177-D: function "handle_dhcp"  was declared but never referenced
-  PT_THREAD(handle_dhcp(void))
-..\uip\dhcpc.c: 2 warnings, 4 errors
-"EncoderV2\EncoderV2.axf" - 4 Error(s), 2 Warning(s).
+compiling hello-world.c...
+..\uip\hello-world.c(139): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
+  	PSOCK_BEGIN(&s->p);
+..\uip\hello-world.c(188): warning:  #111-D: statement is unreachable
+    PSOCK_CLOSE(&s->p);
+..\uip\hello-world.c(177): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
+    PSOCK_BEGIN(&s->p);
+..\uip\hello-world.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=32064 RO-data=484 RW-data=708 ZI-data=16996  
+FromELF: creating hex file...
+"EncoderV2\EncoderV2.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -65,8 +62,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Target not created.
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
