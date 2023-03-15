@@ -30,20 +30,21 @@ Build target 'EncoderV2'
 compiling hello-world.c...
 ..\uip\hello-world.c(142): warning:  #546-D: transfer of control bypasses initialization of:
             variable "p"  (declared at line 149)
-            variable "d1"  (declared at line 176)
+            variable "d1"  (declared at line 175)
+            variable "d1"  (declared at line 185)
   	PSOCK_BEGIN(&s->p);
   	^
 ..\uip\hello-world.c(142): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
   	PSOCK_BEGIN(&s->p);
-..\uip\hello-world.c(208): warning:  #940-D: missing return statement at end of non-void function "handle_connection_command" 
+..\uip\hello-world.c(217): warning:  #940-D: missing return statement at end of non-void function "handle_connection_command" 
   }
-..\uip\hello-world.c(224): warning:  #111-D: statement is unreachable
+..\uip\hello-world.c(233): warning:  #111-D: statement is unreachable
     PSOCK_CLOSE(&s->p);
-..\uip\hello-world.c(213): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
+..\uip\hello-world.c(222): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
     PSOCK_BEGIN(&s->p);
 ..\uip\hello-world.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=33764 RO-data=644 RW-data=712 ZI-data=19712  
+Program Size: Code=33896 RO-data=644 RW-data=712 ZI-data=19712  
 FromELF: creating hex file...
 "EncoderV2\EncoderV2.axf" - 0 Error(s), 5 Warning(s).
 

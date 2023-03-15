@@ -170,8 +170,7 @@ handle_connection_command(struct hello_world_state *s)
 	{
 		//Если в cтроке name есть подстрока multi то считаем что хотим установить множитель
 		if( strspn(s->name, "multi") )
-		{
-			
+		{		
 			char * ptrEnd;
 			double d1 = strtod (s->value, &ptrEnd);
 			memset(s->value, 0, 40);
@@ -180,6 +179,16 @@ handle_connection_command(struct hello_world_state *s)
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");
 		}		
+		else if ( strspn(s->name, "offset") )
+		{
+			char * ptrEnd;
+			double d1 = strtod (s->value, &ptrEnd);
+			memset(s->value, 0, 40);
+			sprintf(s->value, "%0.7f", d1);
+			PSOCK_SEND_STR(&s->p, "Set offset = ");
+			PSOCK_SEND_STR(&s->p, s->value);
+			PSOCK_SEND_STR(&s->p, "\n\r");
+		}
 		else
 		{
 				PSOCK_SEND_STR(&s->p, "Command not found\n\r");
