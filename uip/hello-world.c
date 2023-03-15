@@ -23,6 +23,7 @@
  * <string.h>, since we use the memcpy() function in the code.
  */
 #include "hello-world.h"
+#include <stdlib.h>
 #include "uip.h"
 #include <string.h>
 #include <stdio.h>
@@ -133,29 +134,64 @@ hello_world_appcall(void)
  * explicitly return - all return statements are hidden in the PSOCK
  * macros.
  */
+
+
 static int
 handle_connection_command(struct hello_world_state *s)
 {
 	PSOCK_BEGIN(&s->p);
 
-  PSOCK_SEND_STR(&s->p, "Hello. What is your name?\n\r");
+  PSOCK_SEND_STR(&s->p, "Hello. this is encoder to RTTRPM modul.\n\rPlease enter command. \n\rEnter exit to disconnect.\n\r");
+	memset(s->inputbuffer, 0, 40);
   PSOCK_READTO(&s->p, '\n');
 	
-//	short a = -1;
-//	for(int i=0; i < sizeof(s->inputbuffer); i++)
-//	{
-//		if(s->inputbuffer[i] == '=')
-//		{
-//			a = i;
-//			break;
-//		}
-//	}
 	
-  strncpy(s->name, s->inputbuffer, sizeof(s->name));
-  PSOCK_SEND_STR(&s->p, "Hello ");
-  PSOCK_SEND_STR(&s->p, s->name);
-  PSOCK_CLOSE(&s->p);
-	PSOCK_END(&s->p);
+	char *p = strtok(s->inputbuffer,"=");
+
+	if(p != NULL)		
+	{
+		memset(s->name, 0, 40);
+		memset(s->value, 0, 40);
+		
+		memcpy(s->name, p, strlen(p));
+		p = strtok(NULL, "=");
+		memcpy(s->value, p, strlen(p));
+		s->value[strlen(p)-1] = 0;
+		
+		//Записываем ссылку на первое вхождение символа ','
+		char *ref = strchr(s->value, ',');
+		//Если есть такой символ, меняем его на точку
+		if(ref) ref[0] = '.';
+		
+	}
+
+	//Если в cтроке name есть подстрока exit разрываем соединение
+	if( strspn(s->name, "exit") == NULL )
+	{
+		//Если в cтроке name есть подстрока multi то считаем что хотим установить множитель
+		if( strspn(s->name, "multi") )
+		{
+			
+			char * ptrEnd;
+			double d1 = strtod (s->value, &ptrEnd);
+			memset(s->value, 0, 40);
+			sprintf(s->value, "%0.7f", d1);
+			PSOCK_SEND_STR(&s->p, "Set multiply = ");
+			PSOCK_SEND_STR(&s->p, s->value);
+			PSOCK_SEND_STR(&s->p, "\n\r");
+		}		
+		else
+		{
+				PSOCK_SEND_STR(&s->p, "Command not found\n\r");
+		}
+	}
+	else
+	{
+		PSOCK_CLOSE(&s->p);
+		PSOCK_END(&s->p);
+	}
+	
+
 	
 	/*
   PSOCK_BEGIN(&s->p);

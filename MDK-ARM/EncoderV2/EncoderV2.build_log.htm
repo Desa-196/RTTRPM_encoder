@@ -28,17 +28,24 @@ Project File Date:  03/13/2023
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'EncoderV2'
 compiling hello-world.c...
-..\uip\hello-world.c(139): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
+..\uip\hello-world.c(142): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "p"  (declared at line 149)
+            variable "d1"  (declared at line 176)
   	PSOCK_BEGIN(&s->p);
-..\uip\hello-world.c(188): warning:  #111-D: statement is unreachable
+  	^
+..\uip\hello-world.c(142): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
+  	PSOCK_BEGIN(&s->p);
+..\uip\hello-world.c(208): warning:  #940-D: missing return statement at end of non-void function "handle_connection_command" 
+  }
+..\uip\hello-world.c(224): warning:  #111-D: statement is unreachable
     PSOCK_CLOSE(&s->p);
-..\uip\hello-world.c(177): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
+..\uip\hello-world.c(213): warning:  #550-D: variable "PT_YIELD_FLAG"  was set but never used
     PSOCK_BEGIN(&s->p);
-..\uip\hello-world.c: 3 warnings, 0 errors
+..\uip\hello-world.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=32064 RO-data=484 RW-data=708 ZI-data=16996  
+Program Size: Code=33764 RO-data=644 RW-data=712 ZI-data=19712  
 FromELF: creating hex file...
-"EncoderV2\EncoderV2.axf" - 0 Error(s), 3 Warning(s).
+"EncoderV2\EncoderV2.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -62,7 +69,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

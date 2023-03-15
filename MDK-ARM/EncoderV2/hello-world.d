@@ -42,6 +42,7 @@ encoderv2\hello-world.o: ..\uip\pt.h
 encoderv2\hello-world.o: ..\uip\lc.h
 encoderv2\hello-world.o: ..\uip\lc-switch.h
 encoderv2\hello-world.o: ..\uip\psock.h
+encoderv2\hello-world.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 encoderv2\hello-world.o: ..\uip\uip.h
 encoderv2\hello-world.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 encoderv2\hello-world.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
@@ -60,5 +61,4 @@ encoderv2\hello-world.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queu
 encoderv2\hello-world.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 encoderv2\hello-world.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 encoderv2\hello-world.o: ..\..\EncoderV2\enc28j60.h
-encoderv2\hello-world.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 encoderv2\hello-world.o: ../Core/Inc/main.h
