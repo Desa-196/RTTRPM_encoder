@@ -70,7 +70,7 @@ osThreadId myTask04Handle;
 //Множитель
 double multiplier = 1.0;
 //Смещение
-double offset = 0.0;
+double offset = 1000.0;
 
 uint16_t stat_link;
 uint8_t lstat = 0;

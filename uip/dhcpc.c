@@ -521,7 +521,7 @@ dhcpc_appcall(void)
 			
 			xQueueReceive( q, &( xQmotorPosition ), portMAX_DELAY ); 
 			
-			position_modul.x = xQmotorPosition[2]*multiplier + offset;
+			position_modul.x = (xQmotorPosition[2] + offset)*multiplier;
 			position_modul.y = xQmotorPosition[0];
 			position_modul.z = xQmotorPosition[1];
 			
@@ -542,7 +542,7 @@ dhcpc_appcall(void)
 			
 			
 			//Имя источника данных, указывается в Tracking Input->Trackable ID программы WATCHOUT
-			char name[] = "pytest";
+			char name[] = "pytest2";
 			memcpy(rttrpm_header.name, name, sizeof(name));
 
 //			orientation_modul_euler.x = 0;

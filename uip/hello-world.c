@@ -34,6 +34,12 @@
  * Declaration of the protosocket function that handles the connection
  * (defined at the end of the code).
  */
+ 
+ //Множитель
+extern double multiplier;
+//Смещение
+extern double offset;
+
 static int handle_connection(struct hello_world_state *s);
 struct hello_world_state *s;
 uint8_t state_connection2 = 0;
@@ -165,16 +171,17 @@ handle_connection_command(struct hello_world_state *s)
 		
 	}
 
-	//Если в cтроке name есть подстрока exit разрываем соединение
+	//Если в cтроке name есть подстрока exit разрываем соединение. Реализовал отдельным if, так как PSOCK_END должен быть в последнем else, иначе ругается при компиляции
 	if( strspn(s->name, "exit") == NULL )
 	{
+		PSOCK_SEND_STR(&s->p, "\n");
 		//Если в cтроке name есть подстрока multi то считаем что хотим установить множитель
 		if( strspn(s->name, "multi") )
 		{		
 			char * ptrEnd;
-			double d1 = strtod (s->value, &ptrEnd);
+			multiplier = strtod (s->value, &ptrEnd);
 			memset(s->value, 0, 40);
-			sprintf(s->value, "%0.7f", d1);
+			sprintf(s->value, "%0.7f", multiplier);
 			PSOCK_SEND_STR(&s->p, "Set multiply = ");
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");
@@ -182,9 +189,9 @@ handle_connection_command(struct hello_world_state *s)
 		else if ( strspn(s->name, "offset") )
 		{
 			char * ptrEnd;
-			double d1 = strtod (s->value, &ptrEnd);
+			offset = strtod (s->value, &ptrEnd);
 			memset(s->value, 0, 40);
-			sprintf(s->value, "%0.7f", d1);
+			sprintf(s->value, "%0.7f", offset);
 			PSOCK_SEND_STR(&s->p, "Set offset = ");
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");
@@ -193,6 +200,7 @@ handle_connection_command(struct hello_world_state *s)
 		{
 				PSOCK_SEND_STR(&s->p, "Command not found\n\r");
 		}
+		PSOCK_SEND_STR(&s->p, "\n");
 	}
 	else
 	{
