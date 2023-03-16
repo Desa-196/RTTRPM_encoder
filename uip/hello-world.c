@@ -160,23 +160,28 @@ handle_connection_command(struct hello_world_state *s)
 		memset(s->value, 0, 40);
 		
 		memcpy(s->name, p, strlen(p));
-		p = strtok(NULL, "=");
-		memcpy(s->value, p, strlen(p));
-		s->value[strlen(p)-1] = 0;
 		
-		//Записываем ссылку на первое вхождение символа ','
-		char *ref = strchr(s->value, ',');
-		//Если есть такой символ, меняем его на точку
-		if(ref) ref[0] = '.';
+		p = strtok(NULL, "=");
+		
+		if(p != NULL)
+		{
+			memcpy(s->value, p, strlen(p));
+			s->value[strlen(p)-1] = 0;
+			
+			//Записываем ссылку на первое вхождение символа ','
+			char *ref = strchr(s->value, ',');
+			//Если есть такой символ, меняем его на точку
+			if(ref) ref[0] = '.';
+		}
 		
 	}
 
 	//Если в cтроке name есть подстрока exit разрываем соединение. Реализовал отдельным if, так как PSOCK_END должен быть в последнем else, иначе ругается при компиляции
-	if( strspn(s->name, "exit") == NULL )
+	if( strstr(s->name, "exit") == NULL )
 	{
 		PSOCK_SEND_STR(&s->p, "\n");
 		//Если в cтроке name есть подстрока multi то считаем что хотим установить множитель
-		if( strspn(s->name, "multi") )
+		if( strstr(s->name, "multi") )
 		{		
 			char * ptrEnd;
 			multiplier = strtod (s->value, &ptrEnd);
@@ -186,7 +191,7 @@ handle_connection_command(struct hello_world_state *s)
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");
 		}		
-		else if ( strspn(s->name, "offset") )
+		else if ( strstr(s->name, "offset") )
 		{
 			char * ptrEnd;
 			offset = strtod (s->value, &ptrEnd);
@@ -204,6 +209,7 @@ handle_connection_command(struct hello_world_state *s)
 	}
 	else
 	{
+		PSOCK_SEND_STR(&s->p, "Exit\n\r");
 		PSOCK_CLOSE(&s->p);
 		PSOCK_END(&s->p);
 	}

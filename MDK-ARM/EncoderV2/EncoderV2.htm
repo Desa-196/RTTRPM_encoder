@@ -3,7 +3,7 @@
 <title>Static Call Graph - [EncoderV2\EncoderV2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image EncoderV2\EncoderV2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Mar 15 15:08:12 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Mar 16 21:33:21 2023
 <BR><P>
 <H3>Maximum Stack Usage =        320 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -339,6 +339,12 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
+<P><STRONG><a name="[138]"></a>strstr</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, strstr.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strstr
+</UL>
+<BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_connection_command
+</UL>
+
 <P><STRONG><a name="[137]"></a>strchr</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, strchr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_connection_command
 </UL>
@@ -350,12 +356,6 @@ Global Symbols
 
 <P><STRONG><a name="[136]"></a>strtok</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, strtok.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = strtok
-</UL>
-<BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_connection_command
-</UL>
-
-<P><STRONG><a name="[138]"></a>strspn</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, strspn.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strspn
 </UL>
 <BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_connection_command
 </UL>
@@ -2711,15 +2711,15 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hello_world_appcall
 </UL>
 
-<P><STRONG><a name="[134]"></a>handle_connection_command</STRONG> (Thumb, 484 bytes, Stack size 32 bytes, hello-world.o(i.handle_connection_command))
+<P><STRONG><a name="[134]"></a>handle_connection_command</STRONG> (Thumb, 524 bytes, Stack size 32 bytes, hello-world.o(i.handle_connection_command))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = handle_connection_command &rArr; strtod &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real
 </UL>
 <BR>[Calls]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_send
 <LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_readto
-<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strspn
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtok
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strchr
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtod
