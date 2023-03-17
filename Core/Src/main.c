@@ -65,12 +65,12 @@ osThreadId myTask04Handle;
 
 #define ALL 3
 
-#define DELAY_READ_ENCODER 8
+#define DELAY_READ_ENCODER 20
 
 //Множитель
-double multiplier = 1.0;
+int multiplier = 1;
 //Смещение
-double offset = 1000.0;
+int offset = 1000;
 
 uint16_t stat_link;
 uint8_t lstat = 0;
@@ -235,7 +235,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	
-	struct uip_eth_addr mac = { {0x00,0x15,0x42,0xBF,0xF0,0x51}};
+	struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
 
 	q = xQueueCreate( 1, sizeof(double[3]));
 	xQueueCommand = xQueueCreate( 10, sizeof(uint8_t));
@@ -260,7 +260,7 @@ int main(void)
 	//dhcpc_request();
 	
 	uip_ipaddr_t ipaddr;
-	uip_ipaddr(ipaddr, 192, 168, 1, 50);
+	uip_ipaddr(ipaddr, 192, 168, 1, 51);
 	uip_sethostaddr(ipaddr);
 	uip_ipaddr(ipaddr, 192, 168, 1, 1);
 	uip_setdraddr(ipaddr);

@@ -22,19 +22,19 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\STM32\RTTRPM_encoder\MDK-ARM\EncoderV2.uvprojx
-Project File Date:  03/16/2023
+Project File Date:  03/17/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'EncoderV2'
-compiling main.c...
-../Core/Src/main.c(99): warning:  #940-D: missing return statement at end of non-void function "reset_encoder" 
-  }
-../Core/Src/main.c(837): warning:  #223-D: function "enc28j60PhystartScan" declared implicitly
-  	enc28j60PhystartScan(PHSTAT1);
-../Core/Src/main.c: 2 warnings, 0 errors
+compiling dhcpc.c...
+..\uip\dhcpc.c(561): warning:  #223-D: function "enc28j60PhyReadScan" declared implicitly
+  			uint16_t	stat_link = enc28j60PhyReadScan()&0x04;
+..\uip\dhcpc.c(400): warning:  #177-D: function "handle_dhcp"  was declared but never referenced
+  PT_THREAD(handle_dhcp(void))
+..\uip\dhcpc.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=34208 RO-data=644 RW-data=712 ZI-data=19712  
+Program Size: Code=33164 RO-data=712 RW-data=708 ZI-data=19716  
 FromELF: creating hex file...
 "EncoderV2\EncoderV2.axf" - 0 Error(s), 2 Warning(s).
 

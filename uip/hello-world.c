@@ -36,9 +36,9 @@
  */
  
  //Множитель
-extern double multiplier;
+extern int multiplier;
 //Смещение
-extern double offset;
+extern int offset;
 
 static int handle_connection(struct hello_world_state *s);
 struct hello_world_state *s;
@@ -183,14 +183,14 @@ handle_connection_command(struct hello_world_state *s)
 		//Если в cтроке name есть подстрока multi то считаем что хотим установить множитель
 		if( strstr(s->name, "getmulti") )
 		{		
-			sprintf(s->value, "%0.7f", multiplier);
+			sprintf(s->value, "%i", multiplier);
 			PSOCK_SEND_STR(&s->p, "Multiply = ");
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");
 		}		
 		else if ( strstr(s->name, "getoffset") )
 		{
-			sprintf(s->value, "%0.7f", offset);
+			sprintf(s->value, "%i", offset);
 			PSOCK_SEND_STR(&s->p, "Offset = ");
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");
@@ -198,9 +198,9 @@ handle_connection_command(struct hello_world_state *s)
 		else if( strstr(s->name, "multi") )
 		{		
 			char * ptrEnd;
-			multiplier = strtod (s->value, &ptrEnd);
+			multiplier = atoi (s->value);
 			memset(s->value, 0, 40);
-			sprintf(s->value, "%0.7f", multiplier);
+			sprintf(s->value, "%i", multiplier);
 			PSOCK_SEND_STR(&s->p, "Set multiply = ");
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");
@@ -208,9 +208,9 @@ handle_connection_command(struct hello_world_state *s)
 		else if ( strstr(s->name, "offset") )
 		{
 			char * ptrEnd;
-			offset = strtod (s->value, &ptrEnd);
+			offset = atoi (s->value);
 			memset(s->value, 0, 40);
-			sprintf(s->value, "%0.7f", offset);
+			sprintf(s->value, "%i", offset);
 			PSOCK_SEND_STR(&s->p, "Set offset = ");
 			PSOCK_SEND_STR(&s->p, s->value);
 			PSOCK_SEND_STR(&s->p, "\n\r");

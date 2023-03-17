@@ -21,7 +21,7 @@
 //--------------------------------------------------
 
 #define ENC28J60_MAXFRAME 512
-#define MAC_ADDR   {0x00,0x15,0x42,0xBF,0xF0,0x51}
+#define MAC_ADDR   {0x00,0x15,0x48,0xBF,0xF0,0x51}
 //--------------------------------------------------
 #define ADDR_MASK        0x1F
 #define BANK_MASK        0x60
