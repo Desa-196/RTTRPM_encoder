@@ -260,11 +260,11 @@ int main(void)
 	//dhcpc_request();
 	
 	uip_ipaddr_t ipaddr;
-	uip_ipaddr(ipaddr, 172, 20, 70, 1);
+	uip_ipaddr(ipaddr, 192, 168, 1, 50);
 	uip_sethostaddr(ipaddr);
-	uip_ipaddr(ipaddr, 172, 20, 0, 1);
+	uip_ipaddr(ipaddr, 192, 168, 1, 1);
 	uip_setdraddr(ipaddr);
-	uip_ipaddr(ipaddr, 255, 255, 0, 0);
+	uip_ipaddr(ipaddr, 255, 255, 255, 0);
 	uip_setnetmask(ipaddr);
 
 
