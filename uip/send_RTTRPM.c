@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "uip.h"
-#include "dhcpc.h"
+#include "send_RTTRPM.h"
 #include "timer.h"
 #include "pt.h"
 #include "enc28j60.h"
@@ -24,7 +24,6 @@ extern int offset;
 
 //считаем номера пакетов и добавляем их в заголовок, необходимо для корректной работы предсказания будующего положения.
 uint16_t index_rttrpm_packet = 0;
-int count = 0;
 
 #define SIZE_NAME 15
 
@@ -140,12 +139,12 @@ orientation_modul =
 	.w = 0,
 };
 
-static struct dhcpc_state s;
+static struct RTTRPM_state s;
 
 
 
 void
-dhcpc_init(const void *mac_addr, int mac_len)
+RTTRPM_init(const void *mac_addr, int mac_len)
 {
   uip_ipaddr_t addr;
   
@@ -159,15 +158,15 @@ dhcpc_init(const void *mac_addr, int mac_len)
   uip_ipaddr(addr_multicast, 238,210,10,3);
 	//uip_ipaddr(addr_multicast, 172,20,70,2);
   s.conn = uip_udp_new(&addr_multicast, HTONS(24002));
-	
+	if(s.conn != NULL) {
+    uip_udp_bind(s.conn, HTONS(68));
+  }
   //PT_INIT(&s.pt);
 }
 /*---------------------------------------------------------------------------*/
 void
-dhcpc_appcall(void)
+RTTRPM_appcall(void)
 {
-	if(count == 1000)count = 0;
-	else count++;
 	
 	if(uip_udp_conn->rport == HTONS(24002))
 	{
@@ -175,8 +174,6 @@ dhcpc_appcall(void)
 		//Если в очереди появилось сообщение о новой позиции, отправляем 
 		if(uxQueueMessagesWaiting(q) > 0)
 		{
-			
-			count = 0;
 			
 			double xQmotorPosition[3];
 			

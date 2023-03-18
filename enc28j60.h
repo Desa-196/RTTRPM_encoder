@@ -7,8 +7,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <uip.h>
 
-#define IP_ADDR {172,20,70,1}
 
 //--------------------------------------------------
 #define CS_GPIO_PORT GPIOA                                      
@@ -185,7 +185,7 @@
 #define MAX_FRAMELEN      1500
 //--------------------------------------------------
 
-void enc28j60_ini(void);
+void enc28j60_ini(struct uip_eth_addr *mac);
 uint16_t enc28j60_packetReceive(uint8_t *buf,uint16_t buflen);
 void enc28j60_packetSend(uint8_t *buf,uint16_t buflen);
 uint16_t enc28j60PhyReadH(uint8_t address);

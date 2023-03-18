@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.34.0.0
 Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Denis Ponomarev, Home, LIC=76F5U-SLWCN-NNCAF-6Q0K8-CKLDE-39BHN
+License Information: Denis Ponomarev, home, LIC=ATTQ1-CC2G1-9UD4U-SC8G1-H6EJS-0ZQYT
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.34.0.0
@@ -22,19 +22,19 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\STM32\RTTRPM_encoder\MDK-ARM\EncoderV2.uvprojx
-Project File Date:  03/17/2023
+Project File Date:  03/18/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'EncoderV2'
-compiling dhcpc.c...
-..\uip\dhcpc.c(561): warning:  #223-D: function "enc28j60PhyReadScan" declared implicitly
-  			uint16_t	stat_link = enc28j60PhyReadScan()&0x04;
-..\uip\dhcpc.c(400): warning:  #177-D: function "handle_dhcp"  was declared but never referenced
-  PT_THREAD(handle_dhcp(void))
-..\uip\dhcpc.c: 2 warnings, 0 errors
+compiling main.c...
+../Core/Src/main.c(103): warning:  #940-D: missing return statement at end of non-void function "reset_encoder" 
+  }
+../Core/Src/main.c(849): warning:  #223-D: function "enc28j60PhystartScan" declared implicitly
+  	enc28j60PhystartScan(PHSTAT1);
+../Core/Src/main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=33164 RO-data=712 RW-data=708 ZI-data=19716  
+Program Size: Code=33152 RO-data=712 RW-data=704 ZI-data=19712  
 FromELF: creating hex file...
 "EncoderV2\EncoderV2.axf" - 0 Error(s), 2 Warning(s).
 
@@ -53,14 +53,14 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_EncoderV2
-  C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
-  C:\Users\Admin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  C:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

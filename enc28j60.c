@@ -1,10 +1,11 @@
 #include "enc28j60.h"
-
 #include "cmsis_os.h"
+
 
 static uint8_t Enc28j60Bank;
 static int gNextPacketPtr;
-uint8_t macaddr[6]=MAC_ADDR;
+
+uint8_t macaddr[6];
 
 extern SPI_HandleTypeDef hspi2;
 
@@ -252,8 +253,15 @@ void enc28j60_packetSend(uint8_t *buf,uint16_t buflen)
 
 //-----
 
-void enc28j60_ini(void)
+void enc28j60_ini(struct uip_eth_addr *mac)
 {
+	macaddr[0] = mac->addr[0];
+	macaddr[1] = mac->addr[1];
+	macaddr[2] = mac->addr[2];
+	macaddr[3] = mac->addr[3];
+	macaddr[4] = mac->addr[4];
+	macaddr[5] = mac->addr[5];
+	
 	enc28j60_writeOp(ENC28J60_SOFT_RESET,0,ENC28J60_SOFT_RESET);
 	HAL_Delay(2);
 	while(!enc28j60_readOp(ENC28J60_READ_CTRL_REG,ESTAT)&ESTAT_CLKRDY);

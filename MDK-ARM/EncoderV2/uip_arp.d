@@ -10,7 +10,7 @@ encoderv2\uip_arp.o: ..\uip\psock.h
 encoderv2\uip_arp.o: ..\uip\pt.h
 encoderv2\uip_arp.o: ..\uip\lc.h
 encoderv2\uip_arp.o: ..\uip\lc-switch.h
-encoderv2\uip_arp.o: ..\uip\dhcpc.h
+encoderv2\uip_arp.o: ..\uip\send_RTTRPM.h
 encoderv2\uip_arp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 encoderv2\uip_arp.o: ../Core/Inc/stm32f1xx_hal_conf.h
 encoderv2\uip_arp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

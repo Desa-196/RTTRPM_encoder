@@ -10,7 +10,7 @@ encoderv2\uip-neighbor.o: ..\uip\psock.h
 encoderv2\uip-neighbor.o: ..\uip\pt.h
 encoderv2\uip-neighbor.o: ..\uip\lc.h
 encoderv2\uip-neighbor.o: ..\uip\lc-switch.h
-encoderv2\uip-neighbor.o: ..\uip\dhcpc.h
+encoderv2\uip-neighbor.o: ..\uip\send_RTTRPM.h
 encoderv2\uip-neighbor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 encoderv2\uip-neighbor.o: ../Core/Inc/stm32f1xx_hal_conf.h
 encoderv2\uip-neighbor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

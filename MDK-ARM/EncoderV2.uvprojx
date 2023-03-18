@@ -747,11 +747,6 @@
               <FilePath>..\uip\clock-arch.c</FilePath>
             </File>
             <File>
-              <FileName>dhcpc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\uip\dhcpc.c</FilePath>
-            </File>
-            <File>
               <FileName>hello-world.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\uip\hello-world.c</FilePath>
@@ -795,6 +790,11 @@
               <FileName>uip-split.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\uip\uip-split.c</FilePath>
+            </File>
+            <File>
+              <FileName>send_RTTRPM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\uip\send_RTTRPM.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -4,7 +4,7 @@ encoderv2\hello-world.o: ..\uip\uipopt.h
 encoderv2\hello-world.o: ..\uip\uip-conf.h
 encoderv2\hello-world.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 encoderv2\hello-world.o: ..\uip\hello-world.h
-encoderv2\hello-world.o: ..\uip\dhcpc.h
+encoderv2\hello-world.o: ..\uip\send_RTTRPM.h
 encoderv2\hello-world.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 encoderv2\hello-world.o: ../Core/Inc/stm32f1xx_hal_conf.h
 encoderv2\hello-world.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

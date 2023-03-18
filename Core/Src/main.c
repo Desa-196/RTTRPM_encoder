@@ -18,6 +18,8 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+
+
 #include "main.h"
 #include "cmsis_os.h"
 #include "usb_device.h"
@@ -26,11 +28,13 @@
 /* USER CODE BEGIN Includes */
 
 #include "enc28j60.h"
-#include "dhcpc.h"
+#include "send_RTTRPM.h"
 #include <stdio.h>
 #include <string.h>
 #include <uip.h>
 #include <uip_arp.h>
+
+#define DEVICE  1
 
 /* USER CODE END Includes */
 
@@ -234,13 +238,17 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
-	
-	struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
-
+	#if DEVICE == 1
+		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
+	#elif DEVICE == 2
+		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
+	#endif
+		
+		
 	q = xQueueCreate( 1, sizeof(double[3]));
 	xQueueCommand = xQueueCreate( 10, sizeof(uint8_t));
 	
-	enc28j60_ini();
+	enc28j60_ini(&mac);
 	
 	uip_init();
 	uip_arp_init();
@@ -256,11 +264,15 @@ int main(void)
 	timer_set(&periodic_timer, configTICK_RATE_HZ / 2);
 	timer_set(&arp_timer, configTICK_RATE_HZ * 10);
 	
-	dhcpc_init(&uip_ethaddr, sizeof(uip_ethaddr));
-	//dhcpc_request();
+	RTTRPM_init(&uip_ethaddr, sizeof(uip_ethaddr));
 	
 	uip_ipaddr_t ipaddr;
+	
+	#if DEVICE == 1
+	uip_ipaddr(ipaddr, 192, 168, 1, 50);
+	#elif DEVICE == 2
 	uip_ipaddr(ipaddr, 192, 168, 1, 51);
+	#endif
 	uip_sethostaddr(ipaddr);
 	uip_ipaddr(ipaddr, 192, 168, 1, 1);
 	uip_setdraddr(ipaddr);
@@ -269,8 +281,8 @@ int main(void)
 
 
 	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
-		HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
-			HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
+	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
+	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
 
 
 

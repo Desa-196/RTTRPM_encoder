@@ -7,7 +7,7 @@
 #define u16_t uint16_t
 #define u8_t uint8_t
 
-struct dhcpc_state {
+struct RTTRPM_state {
   struct pt pt;
   struct uip_udp_conn *conn;
   struct timer timer;
@@ -24,12 +24,12 @@ struct dhcpc_state {
   u16_t default_router[2];
 };
 
-void dhcpc_init(const void *mac_addr, int mac_len);
+void RTTRPM_init(const void *mac_addr, int mac_len);
 
-void dhcpc_appcall(void);
+void RTTRPM_appcall(void);
 
-typedef struct dhcpc_state uip_udp_appstate_t;
-#define UIP_UDP_APPCALL dhcpc_appcall
+typedef struct RTTRPM_state uip_udp_appstate_t;
+#define UIP_UDP_APPCALL RTTRPM_appcall
 
 
 #endif /* __DHCPC_H__ */

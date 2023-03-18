@@ -463,12 +463,12 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=encoderv2\startup_stm32f103xb.d -oencoderv2\startup_stm32f103xb.o 
--I..\Core\Inc -I.\RTE\_EncoderV2 -IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\C
-MSIS\5.7.0\CMSIS\Core\Include -IC:\Users\Admin\AppData\Local\Arm\Packs\Keil\STM
-32F1xx_DFP\2.3.0\Device\Include --predefine="__MICROLIB SETA 1" --predefine="__
-UVISION_VERSION SETA 534" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD 
-SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f103xb.lst startup_stm32
-f103xb.s
+-I..\Core\Inc -I.\RTE\_EncoderV2 -IC:\Users\ponomarev\AppData\Local\Arm\Packs\A
+RM\CMSIS\5.7.0\CMSIS\Core\Include -IC:\Users\ponomarev\AppData\Local\Arm\Packs\
+Keil\STM32F1xx_DFP\2.3.0\Device\Include --predefine="__MICROLIB SETA 1" --prede
+fine="__UVISION_VERSION SETA 534" --predefine="_RTE_ SETA 1" --predefine="STM32
+F10X_MD SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f103xb.lst start
+up_stm32f103xb.s
 
 
 
