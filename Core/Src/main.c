@@ -34,7 +34,7 @@
 #include <uip.h>
 #include <uip_arp.h>
 
-#define DEVICE  1
+#define DEVICE  2
 
 /* USER CODE END Includes */
 
@@ -69,12 +69,16 @@ osThreadId myTask04Handle;
 
 #define ALL 3
 
-#define DELAY_READ_ENCODER 20
+//При еденице уже не справляется, отдает только 700 пакетов/с вместо 1000
+#define DELAY_READ_ENCODER 2
+
+double test = 0;
+int dir = 1;
 
 //Множитель
 int multiplier = 1;
 //Смещение
-int offset = 1000;
+int offset = 0;
 
 uint16_t stat_link;
 uint8_t lstat = 0;
@@ -930,8 +934,13 @@ void StartTask03(void const * argument)
 			
 
 		}
-
+		if(test <= 0 ) dir = 1;
+		else if(test >= 1000) dir = 0;
 		
+		if(dir == 1) test += 0.1;
+		if(dir == 0) test -= 0.1;
+		
+		EncoderPosition[2] = (int)test;
 		//Отправляем значение энкодера  в очередь на отправку 
 		xQueueSend(q, ( void * ) &EncoderPosition, portMAX_DELAY  );
 		osDelay(DELAY_READ_ENCODER);

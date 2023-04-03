@@ -159,7 +159,7 @@ RTTRPM_init(const void *mac_addr, int mac_len)
 	//uip_ipaddr(addr_multicast, 172,20,70,2);
   s.conn = uip_udp_new(&addr_multicast, HTONS(24002));
 	if(s.conn != NULL) {
-    uip_udp_bind(s.conn, HTONS(68));
+    uip_udp_bind(s.conn, HTONS(1025));
   }
   //PT_INIT(&s.pt);
 }
@@ -180,7 +180,7 @@ RTTRPM_appcall(void)
 			xQueueReceive( q, &( xQmotorPosition ), portMAX_DELAY ); 
 			
 			//position_modul.x = (xQmotorPosition[2] + offset)*multiplier;
-			position_modul.x = xQmotorPosition[2]/multiplier;
+			position_modul.x = (xQmotorPosition[2]+offset)/multiplier;
 			position_modul.y = xQmotorPosition[0];
 			position_modul.z = xQmotorPosition[1];
 			
@@ -195,14 +195,16 @@ RTTRPM_appcall(void)
 			//Добавляем в заголовок номер пакета. __REV16 - меняет порядок бит на обратный
 			rttrpm_header.id = __REV16(index_rttrpm_packet);
 			//Добавляем в заголовок размер RTTRPM-пакета, 
-			rttrpm_header.size_rttrpm_packet 		= __REV16(33 + sizeof(position_modul));
-			rttrpm_header.size_trackable_modul 	= __REV16(15 + sizeof(position_modul));
+			rttrpm_header.size_rttrpm_packet 		= __REV16(38 + sizeof(position_modul));
+			rttrpm_header.size_trackable_modul 	= __REV16(5 + sizeof(rttrpm_header.name) + sizeof(position_modul));
 			
 			
 			
 			//Имя источника данных, указывается в Tracking Input->Trackable ID программы WATCHOUT
-			char name[] = "encoder2";
-			memcpy(rttrpm_header.name, name, sizeof(name));
+			
+			char name[] = "pytest2";
+			
+			memcpy(rttrpm_header.name, name, sizeof(name)-1);
 
 //			orientation_modul_euler.x = 0;
 //			orientation_modul_euler.y = ((xQmotorPosition)*3.14)/180;
