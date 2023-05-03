@@ -16,11 +16,7 @@ extern uint32_t latency[3];
 extern xQueueHandle q;
 extern xQueueHandle xQueueCommand;
 
-//Множитель
-extern int multiplier;
-//Смещение
-extern int offset;
-
+extern uint8_t reg;
 
 //считаем номера пакетов и добавляем их в заголовок, необходимо для корректной работы предсказания будующего положения.
 uint16_t index_rttrpm_packet = 0;
@@ -180,12 +176,12 @@ RTTRPM_appcall(void)
 			xQueueReceive( q, &( xQmotorPosition ), portMAX_DELAY ); 
 			
 			//position_modul.x = (xQmotorPosition[2] + offset)*multiplier;
-			position_modul.x = (xQmotorPosition[2]+offset)/multiplier;
+			position_modul.x = xQmotorPosition[2];
 			position_modul.y = xQmotorPosition[0];
 			position_modul.z = xQmotorPosition[1];
 			
 			//Добавляем задержку между измерениями, она расчитывается в main.c
-			position_modul.latency = __REV16(latency[2]);
+			position_modul.latency = latency[2];
 //			
 //			orientation_modul.w = cos(	(((xQmotorPosition)*3.14)/180)	/2.0		);
 //			orientation_modul.x = 0;
@@ -193,10 +189,10 @@ RTTRPM_appcall(void)
 //			orientation_modul.z = 0;
 			
 			//Добавляем в заголовок номер пакета. __REV16 - меняет порядок бит на обратный
-			rttrpm_header.id = __REV16(index_rttrpm_packet);
+			rttrpm_header.id = index_rttrpm_packet;
 			//Добавляем в заголовок размер RTTRPM-пакета, 
-			rttrpm_header.size_rttrpm_packet 		= __REV16(38 + sizeof(position_modul));
-			rttrpm_header.size_trackable_modul 	= __REV16(5 + sizeof(rttrpm_header.name) + sizeof(position_modul));
+			rttrpm_header.size_rttrpm_packet 		= (38 + sizeof(position_modul));
+			rttrpm_header.size_trackable_modul 	= (5 + sizeof(rttrpm_header.name) + sizeof(position_modul));
 			
 			
 			

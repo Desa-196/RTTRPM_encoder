@@ -1,5 +1,5 @@
-encoderv2\enc28j60.o: ..\enc28j60.c
-encoderv2\enc28j60.o: ..\enc28j60.h
+encoderv2\enc28j60.o: enc28j60.c
+encoderv2\enc28j60.o: enc28j60.h
 encoderv2\enc28j60.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 encoderv2\enc28j60.o: ../Core/Inc/stm32f1xx_hal_conf.h
 encoderv2\enc28j60.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

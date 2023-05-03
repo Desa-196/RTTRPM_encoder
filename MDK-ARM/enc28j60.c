@@ -1,6 +1,7 @@
 #include "enc28j60.h"
 #include "cmsis_os.h"
 
+extern int8_t reg;
 
 static uint8_t Enc28j60Bank;
 static int gNextPacketPtr;
@@ -274,6 +275,7 @@ void enc28j60_ini(struct uip_eth_addr *mac)
 
 	//Enable Broadcast
 	enc28j60_writeRegByte(ERXFCON,enc28j60_readRegByte(ERXFCON)|ERXFCON_BCEN);
+	
 
 	enc28j60_writeRegByte(MACON1,MACON1_MARXEN|MACON1_TXPAUS|MACON1_RXPAUS);
 	enc28j60_writeRegByte(MACON2,0x00);
@@ -301,6 +303,8 @@ void enc28j60_ini(struct uip_eth_addr *mac)
 	enc28j60_writeOp(ENC28J60_BIT_FIELD_SET,EIE,EIE_INTIE|EIE_PKTIE);
 
 	enc28j60_writeOp(ENC28J60_BIT_FIELD_SET,ECON1,ECON1_RXEN);
+
+	reg =enc28j60_readRegByte( ERXFCON);
 	
 
 }

@@ -1,11 +1,11 @@
 --cpu Cortex-M3
 "encoderv2\startup_stm32f103xb.o"
-"encoderv2\enc28j60.o"
 "encoderv2\main.o"
 "encoderv2\freertos.o"
 "encoderv2\stm32f1xx_it.o"
 "encoderv2\stm32f1xx_hal_msp.o"
 "encoderv2\stm32f1xx_hal_timebase_tim.o"
+"encoderv2\enc28j60.o"
 "encoderv2\stm32f1xx_hal_gpio_ex.o"
 "encoderv2\stm32f1xx_hal_pcd.o"
 "encoderv2\stm32f1xx_hal_pcd_ex.o"

@@ -1,68 +1,8 @@
 Dependencies for Project 'EncoderV2', Target 'EncoderV2': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f103xb.s)(0x641558D9)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ..\Core\Inc-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 534" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o encoderv2\startup_stm32f103xb.o --depend encoderv2\startup_stm32f103xb.d)
-F (..\enc28j60.c)(0x641585A8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\enc28j60.o --omf_browse encoderv2\enc28j60.crf --depend encoderv2\enc28j60.d)
-I (..\enc28j60.h)(0x641585A8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x641558D8)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x641558D8)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x641558D8)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x641558D8)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x641558D8)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E8312)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x641558D8)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x641558D8)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x641558D8)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x641558D8)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E8312)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x641558D9)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x641558D9)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x641558D9)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x641558D8)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x641558D9)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x641558D8)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E8312)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E8312)
-I (..\uip\uip.h)(0x641558D9)
-I (..\uip\uipopt.h)(0x641558D9)
-I (..\uip\uip-conf.h)(0x641585A8)
-I (..\uip\hello-world.h)(0x641558D9)
-I (..\uip\psock.h)(0x641558D9)
-I (..\uip\pt.h)(0x641558D9)
-I (..\uip\lc.h)(0x641558D9)
-I (..\uip\lc-switch.h)(0x641558D9)
-I (..\uip\send_RTTRPM.h)(0x641585A8)
-I (..\uip\timer.h)(0x641558D9)
-I (..\uip\clock.h)(0x641558D9)
-I (..\uip\clock-arch.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x641558D9)
-I (../Core/Inc/FreeRTOSConfig.h)(0x641558D8)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x641558D9)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x641558D9)
 F (..\uip-conf.h)(0x641585A8)()
-F (../Core/Src/main.c)(0x6421A140)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\main.o --omf_browse encoderv2\main.crf --depend encoderv2\main.d)
+F (../Core/Src/main.c)(0x645291FE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\main.o --omf_browse encoderv2\main.crf --depend encoderv2\main.d)
 I (../Core/Inc/main.h)(0x641558D8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x641558D8)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x641558D8)
@@ -114,7 +54,7 @@ I (../USB_DEVICE/Target/usbd_conf.h)(0x641558D9)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E8312)
-I (..\..\EncoderV2\enc28j60.h)(0x64157037)
+I (..\..\EncoderV2\enc28j60.h)(0x64479386)
 I (..\uip\uip.h)(0x641558D9)
 I (..\uip\uipopt.h)(0x641558D9)
 I (..\uip\uip-conf.h)(0x641585A8)
@@ -265,6 +205,66 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x641558D9)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x641558D8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x641558D9)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x641558D8)
+F (.\enc28j60.c)(0x6447B0EE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\enc28j60.o --omf_browse encoderv2\enc28j60.crf --depend encoderv2\enc28j60.d)
+I (enc28j60.h)(0x64478C0F)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x641558D8)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x641558D8)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x641558D8)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x641558D8)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x641558D8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E8312)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x641558D8)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x641558D8)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x641558D8)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x641558D8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E8312)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x641558D9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x641558D9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x641558D9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x641558D8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x641558D9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x641558D8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E8312)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E8312)
+I (..\uip\uip.h)(0x641558D9)
+I (..\uip\uipopt.h)(0x641558D9)
+I (..\uip\uip-conf.h)(0x641585A8)
+I (..\uip\hello-world.h)(0x641558D9)
+I (..\uip\psock.h)(0x641558D9)
+I (..\uip\pt.h)(0x641558D9)
+I (..\uip\lc.h)(0x641558D9)
+I (..\uip\lc-switch.h)(0x641558D9)
+I (..\uip\send_RTTRPM.h)(0x641585A8)
+I (..\uip\timer.h)(0x641558D9)
+I (..\uip\clock.h)(0x641558D9)
+I (..\uip\clock-arch.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x641558D9)
+I (../Core/Inc/FreeRTOSConfig.h)(0x641558D8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x641558D9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x641558D9)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x641558D9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\stm32f1xx_hal_gpio_ex.o --omf_browse encoderv2\stm32f1xx_hal_gpio_ex.crf --depend encoderv2\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x641558D8)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x641558D8)
@@ -969,7 +969,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x641558D9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x641558D9)
 F (..\uip\clock-arch.c)(0x641558D9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\clock-arch.o --omf_browse encoderv2\clock-arch.crf --depend encoderv2\clock-arch.d)
 I (..\uip\clock-arch.h)(0x641558D9)
-F (..\uip\hello-world.c)(0x641558D9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\hello-world.o --omf_browse encoderv2\hello-world.crf --depend encoderv2\hello-world.d)
+F (..\uip\hello-world.c)(0x645291C5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\hello-world.o --omf_browse encoderv2\hello-world.crf --depend encoderv2\hello-world.d)
 I (..\uip\hello-world.h)(0x641558D9)
 I (..\uip\uipopt.h)(0x641558D9)
 I (..\uip\uip-conf.h)(0x641585A8)
@@ -1029,7 +1029,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x641558D9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x641558D9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x641558D9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x641558D9)
-I (..\..\EncoderV2\enc28j60.h)(0x64157037)
+I (..\..\EncoderV2\enc28j60.h)(0x64479386)
 I (../Core/Inc/main.h)(0x641558D8)
 F (..\uip\psock.c)(0x641558D9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\psock.o --omf_browse encoderv2\psock.crf --depend encoderv2\psock.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E8312)
@@ -1353,7 +1353,7 @@ I (..\uip\clock.h)(0x641558D9)
 I (..\uip\clock-arch.h)(0x641558D9)
 I (..\uip\uip-fw.h)(0x641558D9)
 I (..\uip\uip_arch.h)(0x641558D9)
-F (..\uip\send_RTTRPM.c)(0x6421A140)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\send_rttrpm.o --omf_browse encoderv2\send_rttrpm.crf --depend encoderv2\send_rttrpm.d)
+F (..\uip\send_RTTRPM.c)(0x64529111)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\uip -I ..\..\EncoderV2 -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ..\multicast-I.\RTE\_EncoderV2-IC:\Users\ponomarev\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ponomarev\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o encoderv2\send_rttrpm.o --omf_browse encoderv2\send_rttrpm.crf --depend encoderv2\send_rttrpm.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E8312)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E8312)
 I (..\uip\uip.h)(0x641558D9)
@@ -1398,7 +1398,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x641558D8)
 I (..\uip\timer.h)(0x641558D9)
 I (..\uip\clock.h)(0x641558D9)
 I (..\uip\clock-arch.h)(0x641558D9)
-I (..\..\EncoderV2\enc28j60.h)(0x64157037)
+I (..\..\EncoderV2\enc28j60.h)(0x64479386)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E8312)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x641558D9)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x641558D9)

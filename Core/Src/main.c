@@ -34,7 +34,7 @@
 #include <uip.h>
 #include <uip_arp.h>
 
-#define DEVICE  2
+#define DEVICE  1
 
 /* USER CODE END Includes */
 
@@ -74,6 +74,8 @@ osThreadId myTask04Handle;
 
 double test = 0;
 int dir = 1;
+
+uint8_t reg = 0;
 
 //Множитель
 int multiplier = 1;
@@ -243,7 +245,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	#if DEVICE == 1
-		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
+		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x50}};
 	#elif DEVICE == 2
 		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
 	#endif
@@ -940,7 +942,7 @@ void StartTask03(void const * argument)
 		if(dir == 1) test += 0.1;
 		if(dir == 0) test -= 0.1;
 		
-		EncoderPosition[2] = (int)test;
+		EncoderPosition[2] = test;
 		//Отправляем значение энкодера  в очередь на отправку 
 		xQueueSend(q, ( void * ) &EncoderPosition, portMAX_DELAY  );
 		osDelay(DELAY_READ_ENCODER);

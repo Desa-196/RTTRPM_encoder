@@ -394,11 +394,6 @@
           <GroupName>Application/User/Core</GroupName>
           <Files>
             <File>
-              <FileName>enc28j60.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\enc28j60.c</FilePath>
-            </File>
-            <File>
               <FileName>uip-conf.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\uip-conf.h</FilePath>
@@ -427,6 +422,11 @@
               <FileName>stm32f1xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f1xx_hal_timebase_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>enc28j60.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\enc28j60.c</FilePath>
             </File>
           </Files>
         </Group>

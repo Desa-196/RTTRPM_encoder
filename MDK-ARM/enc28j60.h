@@ -185,6 +185,7 @@
 #define MAX_FRAMELEN      1500
 //--------------------------------------------------
 
+static uint8_t enc28j60_readRegByte(uint8_t addres);
 void enc28j60_ini(struct uip_eth_addr *mac);
 uint16_t enc28j60_packetReceive(uint8_t *buf,uint16_t buflen);
 void enc28j60_packetSend(uint8_t *buf,uint16_t buflen);

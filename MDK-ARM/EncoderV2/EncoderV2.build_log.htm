@@ -22,27 +22,21 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\STM32\RTTRPM_encoder\MDK-ARM\EncoderV2.uvprojx
-Project File Date:  03/18/2023
+Project File Date:  04/25/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'EncoderV2'
-compiling send_RTTRPM.c...
-..\uip\send_RTTRPM.c(149): warning:  #550-D: variable "addr"  was set but never used
-    uip_ipaddr_t addr;
-..\uip\send_RTTRPM.c(221): warning:  #223-D: function "enc28j60PhyReadScan" declared implicitly
-  			uint16_t	stat_link = enc28j60PhyReadScan()&0x04;
-..\uip\send_RTTRPM.c: 2 warnings, 0 errors
 compiling main.c...
-../Core/Src/main.c(107): warning:  #940-D: missing return statement at end of non-void function "reset_encoder" 
+../Core/Src/main.c(109): warning:  #940-D: missing return statement at end of non-void function "reset_encoder" 
   }
-../Core/Src/main.c(853): warning:  #223-D: function "enc28j60PhystartScan" declared implicitly
+../Core/Src/main.c(855): warning:  #223-D: function "enc28j60PhystartScan" declared implicitly
   	enc28j60PhystartScan(PHSTAT1);
 ../Core/Src/main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=33336 RO-data=712 RW-data=720 ZI-data=19712  
+Program Size: Code=33428 RO-data=712 RW-data=724 ZI-data=19716  
 FromELF: creating hex file...
-"EncoderV2\EncoderV2.axf" - 0 Error(s), 4 Warning(s).
+"EncoderV2\EncoderV2.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -66,7 +60,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:09
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

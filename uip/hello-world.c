@@ -39,6 +39,7 @@
 extern int multiplier;
 //Смещение
 extern int offset;
+extern uint8_t reg;
 
 static int handle_connection(struct hello_world_state *s);
 struct hello_world_state *s;
@@ -148,6 +149,8 @@ handle_connection_command(struct hello_world_state *s)
 	PSOCK_BEGIN(&s->p);
 
   PSOCK_SEND_STR(&s->p, "Hello. this is encoder to RTTRPM modul.\n\rPlease enter command. \n\rEnter exit to disconnect.\n\r");
+	sprintf(s->value, "%i", reg);
+	PSOCK_SEND_STR(&s->p, s->value);
 	memset(s->inputbuffer, 0, 40);
   PSOCK_READTO(&s->p, '\n');
 	
@@ -206,6 +209,16 @@ handle_connection_command(struct hello_world_state *s)
 			PSOCK_SEND_STR(&s->p, "\n\r");
 		}		
 		else if ( strstr(s->name, "offset") )
+		{
+			char * ptrEnd;
+			offset = atoi (s->value);
+			memset(s->value, 0, 40);
+			sprintf(s->value, "%i", offset);
+			PSOCK_SEND_STR(&s->p, "Set offset = ");
+			PSOCK_SEND_STR(&s->p, s->value);
+			PSOCK_SEND_STR(&s->p, "\n\r");
+		}
+		else if ( strstr(s->name, "getproperty") )
 		{
 			char * ptrEnd;
 			offset = atoi (s->value);
