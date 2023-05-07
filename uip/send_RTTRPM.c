@@ -198,7 +198,7 @@ RTTRPM_appcall(void)
 			
 			//Имя источника данных, указывается в Tracking Input->Trackable ID программы WATCHOUT
 			
-			char name[] = "pytest2";
+			char name[] = "Encoder2";
 			
 			memcpy(rttrpm_header.name, name, sizeof(name)-1);
 

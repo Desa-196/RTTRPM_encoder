@@ -245,7 +245,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	#if DEVICE == 1
-		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x50}};
+		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x52}};
 	#elif DEVICE == 2
 		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
 	#endif
@@ -275,7 +275,7 @@ int main(void)
 	uip_ipaddr_t ipaddr;
 	
 	#if DEVICE == 1
-	uip_ipaddr(ipaddr, 192, 168, 1, 50);
+	uip_ipaddr(ipaddr, 192, 168, 1, 52);
 	#elif DEVICE == 2
 	uip_ipaddr(ipaddr, 192, 168, 1, 51);
 	#endif

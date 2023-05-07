@@ -3,7 +3,7 @@
 <title>Static Call Graph - [EncoderV2\EncoderV2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image EncoderV2\EncoderV2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed May 03 19:55:28 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu May 04 20:25:25 2023
 <BR><P>
 <H3>Maximum Stack Usage =        328 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1051,8 +1051,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
-<P><STRONG><a name="[da]"></a>RTTRPM_appcall</STRONG> (Thumb, 220 bytes, Stack size 112 bytes, send_rttrpm.o(i.RTTRPM_appcall))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = RTTRPM_appcall &rArr; enc28j60PhyReadScan &rArr; enc28j60_readRegByte &rArr; enc28j60_SetBank &rArr; enc28j60_writeOp &rArr; SPIx_WriteRead &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[da]"></a>RTTRPM_appcall</STRONG> (Thumb, 206 bytes, Stack size 104 bytes, send_rttrpm.o(i.RTTRPM_appcall))
+<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = RTTRPM_appcall &rArr; enc28j60PhyReadScan &rArr; enc28j60_readRegByte &rArr; enc28j60_SetBank &rArr; enc28j60_writeOp &rArr; SPIx_WriteRead &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enc28j60PhyReadScan
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
@@ -1097,7 +1097,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.constdata)
 </UL>
 <P><STRONG><a name="[52]"></a>StartTask02</STRONG> (Thumb, 618 bytes, Stack size 0 bytes, main.o(i.StartTask02))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = StartTask02 &rArr; uip_process &rArr; RTTRPM_appcall &rArr; enc28j60PhyReadScan &rArr; enc28j60_readRegByte &rArr; enc28j60_SetBank &rArr; enc28j60_writeOp &rArr; SPIx_WriteRead &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = StartTask02 &rArr; uip_process &rArr; RTTRPM_appcall &rArr; enc28j60PhyReadScan &rArr; enc28j60_readRegByte &rArr; enc28j60_SetBank &rArr; enc28j60_writeOp &rArr; SPIx_WriteRead &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_process
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_arp_out
@@ -2006,7 +2006,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e9]"></a>uip_process</STRONG> (Thumb, 2946 bytes, Stack size 40 bytes, uip.o(i.uip_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = uip_process &rArr; RTTRPM_appcall &rArr; enc28j60PhyReadScan &rArr; enc28j60_readRegByte &rArr; enc28j60_SetBank &rArr; enc28j60_writeOp &rArr; SPIx_WriteRead &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = uip_process &rArr; RTTRPM_appcall &rArr; enc28j60PhyReadScan &rArr; enc28j60_readRegByte &rArr; enc28j60_SetBank &rArr; enc28j60_writeOp &rArr; SPIx_WriteRead &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_log
 <LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hello_world_appcall
