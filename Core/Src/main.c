@@ -245,7 +245,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	#if DEVICE == 1
-		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x52}};
+		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x50}};
 	#elif DEVICE == 2
 		struct uip_eth_addr mac = { {0x00,0x15,0x48,0xBF,0xF0,0x51}};
 	#endif
@@ -262,7 +262,7 @@ int main(void)
 	
 	HAL_Delay(100);
 	
-	hello_world_init();
+	//hello_world_init();
 	
 	struct timer periodic_timer, arp_timer;
   LD_OFF;
@@ -275,7 +275,7 @@ int main(void)
 	uip_ipaddr_t ipaddr;
 	
 	#if DEVICE == 1
-	uip_ipaddr(ipaddr, 192, 168, 1, 52);
+	uip_ipaddr(ipaddr, 192, 168, 1, 50);
 	#elif DEVICE == 2
 	uip_ipaddr(ipaddr, 192, 168, 1, 51);
 	#endif
@@ -936,16 +936,17 @@ void StartTask03(void const * argument)
 			
 
 		}
-		if(test <= 0 ) dir = 1;
-		else if(test >= 1000) dir = 0;
-		
-		if(dir == 1) test += 0.1;
-		if(dir == 0) test -= 0.1;
-		
-		EncoderPosition[2] = test;
+//		if(test <= 0 ) dir = 1;
+//		else if(test >= 1000) dir = 0;
+//		
+//		if(dir == 1) test += 0.1;
+//		if(dir == 0) test -= 0.1;
+//		
+//		EncoderPosition[2] = test;
 		//Отправляем значение энкодера  в очередь на отправку 
 		xQueueSend(q, ( void * ) &EncoderPosition, portMAX_DELAY  );
-		osDelay(DELAY_READ_ENCODER);
+		vTaskDelay(2);
+		//osDelay(DELAY_READ_ENCODER);
   }
   /* USER CODE END StartTask03 */
 }
